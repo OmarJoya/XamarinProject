@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Localization"
+             x:Class="Localization.MainPage">
+
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness">
+      <OnPlatform.iOS>
+        0, 20, 0, 0
+      </OnPlatform.iOS>
+    </OnPlatform>
+  </ContentPage.Padding>
+  <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
+    
+    <Label HorizontalOptions="CenterAndExpand" Text="Ubicacion GPS" FontAttributes="Bold"/>
+    <Label Text="Localización GPS" FontAttributes="Bold"/>
+    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+      <Label Text="Longitud" HorizontalOptions="Start"/>
+      <Label Text="0.000" HorizontalOptions="End"/>
+    </StackLayout>
+    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+      <Label Text="Latitud" HorizontalOptions="Start"/>
+      <Label Text="0.000" HorizontalOptions="End"/>
+    </StackLayout>
+
+    <Label Text="Localización Red Celular" FontAttributes="Bold"/>
+    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+      <Label Text="Longitud" HorizontalOptions="Start"/>
+      <Label Text="0.000" HorizontalOptions="End"/>
+    </StackLayout>
+    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+      <Label Text="Latitud" HorizontalOptions="Start"/>
+      <Label Text="0.000" HorizontalOptions="End"/>
+    </StackLayout>
+
+    <Label Text="Conexion Servidor BD" FontAttributes="Bold"/>
+    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+      <Label Text="Dirección" HorizontalOptions="Start"/>
+      <Entry HorizontalOptions="Fill"></Entry>
+    </StackLayout>
+    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+      <Label Text="Usuario" HorizontalOptions="Start"/>
+      <Entry HorizontalOptions="Fill"></Entry>
+    </StackLayout>
+    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+      <Label Text="Contraseña" HorizontalOptions="Start"/>
+      <Entry IsPassword="True" HorizontalOptions="EndAndExpand"></Entry>
+    </StackLayout>
+    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+      <Label Text="Guardar cada (segundos)" HorizontalOptions="Start"/>
+      <Entry HorizontalOptions="Fill"></Entry>
+    </StackLayout>
+    <Button Text="Conectar" HorizontalOptions="Center"></Button>
+
+  </StackLayout>
+</ContentPage>
