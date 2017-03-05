@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Localization"
-             x:Class="Localization.MainPage">
+             x:Name="ContentPage"
+             x:Class="Localization.MainPage"
+             Title="Localization">
 
   <ContentPage.Padding>
     <OnPlatform x:TypeArguments="Thickness">
@@ -37,21 +39,21 @@
     <Label Text="Conexion Servidor BD" FontAttributes="Bold"/>
     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
       <Label Text="Dirección" HorizontalOptions="Start"/>
-      <Entry HorizontalOptions="FillAndExpand"></Entry>
+      <Entry HorizontalOptions="FillAndExpand" IsEnabled="{Binding Connected}"></Entry>
     </StackLayout>
     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
       <Label Text="Usuario" HorizontalOptions="Start"/>
-      <Entry HorizontalOptions="FillAndExpand"></Entry>
+      <Entry HorizontalOptions="FillAndExpand" IsEnabled="{Binding Connected}"></Entry>
     </StackLayout>
     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
       <Label Text="Contraseña" HorizontalOptions="Start"/>
-      <Entry IsPassword="True" HorizontalOptions="FillAndExpand"></Entry>
+      <Entry IsPassword="True" HorizontalOptions="FillAndExpand" IsEnabled="{Binding Connected}"></Entry>
     </StackLayout>
     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
       <Label Text="Guardar cada (segundos)" HorizontalOptions="Start"/>
-      <Entry HorizontalOptions="FillAndExpand"></Entry>
+      <Entry HorizontalOptions="FillAndExpand" IsEnabled="{Binding Connected}"></Entry>
     </StackLayout>
-    <Button Text="Conectar" HorizontalOptions="Center"></Button>
+    <Button Text="Conectar" HorizontalOptions="Center" Command="{Binding Path=BindingContext.BtnConnect, Source={x:Reference ContentPage}}"></Button>
 
   </StackLayout>
 </ContentPage>
