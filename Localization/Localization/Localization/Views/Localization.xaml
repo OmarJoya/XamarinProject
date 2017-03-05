@@ -53,7 +53,7 @@
       <Label Text="Guardar cada (segundos)" HorizontalOptions="Start"/>
       <Entry HorizontalOptions="FillAndExpand" IsEnabled="{Binding Connected}"></Entry>
     </StackLayout>
-    <Button Text="Conectar" HorizontalOptions="Center" Command="{Binding Path=BindingContext.BtnConnect, Source={x:Reference ContentPage}}"></Button>
+    <Button Text="{Binding TxtButton}" HorizontalOptions="Center" Command="{Binding Path=BindingContext.BtnConnect, Source={x:Reference ContentPage}}"></Button>
 
   </StackLayout>
 </ContentPage>

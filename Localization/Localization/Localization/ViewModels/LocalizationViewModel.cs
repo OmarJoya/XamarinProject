@@ -17,6 +17,7 @@ namespace Localization.ViewModels
         {
             this.View = view;
             Connected = false;
+            TxtButton= "Conectar";
             BtnConnect = new Command(Connect);
         }
         private bool connected;
@@ -30,9 +31,23 @@ namespace Localization.ViewModels
             }
         }
 
+        private string txtButton;
+
+        public string TxtButton
+        {
+            get { return txtButton; }
+            set
+            {
+                txtButton = value;
+                OnPropertyChanged();
+            }
+        }
+
+
         void Connect()
         {
             Connected = !Connected;
+            TxtButton = (Connected)? "Desconectar":"Conectar";
         }
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
