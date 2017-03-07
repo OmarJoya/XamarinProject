@@ -19,11 +19,11 @@
     <Label Text="Localización GPS" FontAttributes="Bold"/>
     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
       <Label Text="Longitud" HorizontalOptions="Start"/>
-      <Label Text="0.000" HorizontalOptions="End"/>
+      <Label Text="{Binding Longitude}" HorizontalOptions="End"/>
     </StackLayout>
     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
       <Label Text="Latitud" HorizontalOptions="Start"/>
-      <Label Text="0.000" HorizontalOptions="End"/>
+      <Label Text="{Binding Latitude}" HorizontalOptions="End"/>
     </StackLayout>
 
     <Label Text="Localización Red Celular" FontAttributes="Bold"/>

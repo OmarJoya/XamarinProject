@@ -1,7 +1,8 @@
-﻿using Xamarin.Forms;
-
-namespace Localization.ViewModels
+﻿namespace Localization.ViewModels
 {
+	using System.Diagnostics;
+	using Plugin.Geolocator;
+	using Xamarin.Forms;
     using System;
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
@@ -43,11 +44,48 @@ namespace Localization.ViewModels
             }
         }
 
+        private double latitude;
+        public double Latitude
+        {
+            get { return latitude; }
+            set
+            {
+                latitude = value;
+                OnPropertyChanged();
+            }
+        }
 
-        void Connect()
+        private double longitude;
+        public double Longitude
+        {
+            get { return latitude; }
+            set
+            {
+                latitude = value;
+                OnPropertyChanged();
+            }
+        }
+
+        async void Connect()
         {
             Connected = !Connected;
             TxtButton = (Connected)? "Desconectar":"Conectar";
+
+            try
+            {
+                var locator = CrossGeolocator.Current;
+                locator.DesiredAccuracy = 50;
+
+                var position = await locator.GetPositionAsync(timeoutMilliseconds: 10000);
+
+                Latitude = position.Latitude;
+                Longitude = position.Longitude;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Unable to get location, may need to increase timeout: " + ex);
+
+            }
         }
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
